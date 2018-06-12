@@ -1,4 +1,4 @@
-"""rutasAleatorias crea un archivo con las rutas disponibles según la temporada que el usuario ingrese y las 
+"""rutasAleatorias crea un archivo con las rutas disponibles según la temporada que el usuario ingrese y las
 respectivas distancias entre dichas rutas.
 Se utiliza la librería csv para operar con este tipo de archivos, random para crear una aleatoridad de rutas
 y el script de distanciasRutas para calcular la distancia entre las rutas."""
@@ -21,7 +21,7 @@ def eleccion_temporada():
 			print("Por favor ingrese un temporada válido.")
 		else:
 			break
-		
+
 	return temporada
 
 def list_ID_aeropuertos():
@@ -31,10 +31,10 @@ def list_ID_aeropuertos():
 		Postcondiciones: devuelve una lista de las ID y coordenadas de los aeropuertos
 	"""
 	# Cambiar la ruta segun donde se lo guarde
-	ruta_archivo = "C:\\Users\\Franco Calvacho\\Desktop\\Proyecto Vuelos-AEDII\\Datos\\AeropuertosArg.csv"
+	ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\AeropuertosArg.csv"
 	with open(ruta_archivo) as archivo_csv:
 		leer = csv.reader(archivo_csv)
-		
+
 		list_ID = []
 
 		for linea in leer:
@@ -59,17 +59,17 @@ def ruteoAleatorio():
 	# longitud de lista_ID. Pero como maximo solo dejamos hasta 35 rutas.
 	# Minimo de rutas: las que se desee. Pero vamos a poner hasta 20 rutas
 	if temporada == 1: # Verano
-		cant_aristas = random.randrange(20,36) 
+		cant_aristas = random.randrange(20,36)
 	elif temporada == 2: # Otoño
-		cant_aristas = random.randrange(20,21) 
+		cant_aristas = random.randrange(20,21)
 	elif temporada == 3: # Invierno
-		cant_aristas = random.randrange(20,26) 
+		cant_aristas = random.randrange(20,26)
 	elif temporada == 4: # Primavera
-		cant_aristas = random.randrange(20,31) 
+		cant_aristas = random.randrange(20,31)
 
 	# print("\nCantidad de aristas: ",cant_aristas)
 
-	# Se buscan dos vértices aleatorios distintos y se los agrega en forma 
+	# Se buscan dos vértices aleatorios distintos y se los agrega en forma
 	# de tuplas a una lista de rutas. Esto se hace hasta que el contador
 	# llegue a la cantidad de aristas que se desea.
 	cont = 0
@@ -78,7 +78,7 @@ def ruteoAleatorio():
 		r1 = random.choice(lista_ID)
 		r2 = random.choice(lista_ID)
 		if (r1 != r2):
-			dist = distancia(r1[1],r1[2],r2[1],r2[2])
+			dist = distancia(r1[0],r2[0])
 			t = (r1[0],r2[0],dist)
 			if (t not in lista_rutas):
 				lista_rutas.append(t)
@@ -92,11 +92,10 @@ def ruteoAleatorio():
 
 	# Creo el archivo de las rutas de los aeropuertos
 	# Cambiar la ruta segun donde se lo guarde
-	ruta_archivo = "C:\\Users\\Franco Calvacho\\Desktop\\Proyecto Vuelos-AEDII\\Datos\\RutasAeropuertos.csv"
+	ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\RutasAeropuertos.csv"
 	with open(ruta_archivo,'w',newline = '') as archivo_rutas:
 		escribir = csv.writer(archivo_rutas)
 		escribir.writerows(lista_rutas)
 
 # Testing (para probar script quiten el comentario de la implementacion)
 ruteoAleatorio()
-

@@ -19,11 +19,11 @@ def distancia(id1, id2):
 		encontro = False
 		encontro2 = False
 		for linea in leer:
-			if int(linea[0]) == id1:
+			if linea[0] == id1:
 				lat1 = float(linea[4])
 				long1 = float(linea[5])
 				encontro = True
-			if int(linea[0]) == id2:
+			if linea[0] == id2:
 				lat2 = float(linea[4])
 				long2 = float(linea[5])
 				encontro2 = True
@@ -42,6 +42,6 @@ def distancia(id1, id2):
 	a = pow(sin(dlat/2),2) + cos(lat1)*cos(lat2)*pow(sin(dlon/2),2)
 	dist = 2 * radio * asin(sqrt(a))
 	return dist
-	
+
 # # Testing
 #print(distancia(8,20))
