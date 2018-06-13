@@ -6,6 +6,9 @@ y el script de distanciasRutas para calcular la distancia entre las rutas."""
 import csv
 import random
 from distanciaRutas import distancia
+import sys
+sys.path.append("..")
+from BuscadorPath.buscarArchivo import buscarArchivo
 
 def eleccion_temporada():
 	"""
@@ -31,7 +34,8 @@ def list_ID_aeropuertos():
 		Postcondiciones: devuelve una lista de las ID y coordenadas de los aeropuertos
 	"""
 	# Cambiar la ruta segun donde se lo guarde
-	ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\AeropuertosArg.csv"
+	# ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\AeropuertosArg.csv"
+	ruta_archivo = buscarArchivo("AeropuertosArg.csv")
 	with open(ruta_archivo) as archivo_csv:
 		leer = csv.reader(archivo_csv)
 
@@ -92,7 +96,8 @@ def ruteoAleatorio():
 
 	# Creo el archivo de las rutas de los aeropuertos
 	# Cambiar la ruta segun donde se lo guarde
-	ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\RutasAeropuertos.csv"
+	# ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\RutasAeropuertos.csv"
+	ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
 	with open(ruta_archivo,'w',newline = '') as archivo_rutas:
 		escribir = csv.writer(archivo_rutas)
 		escribir.writerows(lista_rutas)

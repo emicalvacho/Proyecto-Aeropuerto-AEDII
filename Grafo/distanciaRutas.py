@@ -4,6 +4,9 @@ y la libreria csv para abrir la lista de aeropuertos."""
 
 from math import cos,radians,sin,pow,asin,sqrt
 import csv
+import sys
+sys.path.append("..")
+from BuscadorPath.buscarArchivo import buscarArchivo
 
 def distancia(id1, id2):
 	"""
@@ -13,7 +16,8 @@ def distancia(id1, id2):
 	"""
 	radio = 6371 # Este es el radio de la Tierra
 
-	ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\AeropuertosArg.csv"
+	# ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\AeropuertosArg.csv"
+	ruta_archivo = buscarArchivo("AeropuertosArg.csv") 
 	with open(ruta_archivo) as archivo_csv:
 		leer = csv.reader(archivo_csv)
 		encontro = False

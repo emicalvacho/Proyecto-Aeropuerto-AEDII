@@ -4,6 +4,9 @@ Utiliza la libreria csv para trabajar con dichos archivos y pprint para debuggin
 
 import csv
 import pprint
+import sys
+sys.path.append("..")
+from BuscadorPath.buscarArchivo import buscarArchivo
 
 class Graph (object):
 	def __init__(self, graph_dict = {}):
@@ -37,7 +40,8 @@ class Graph (object):
 			Postcondicion: no devuelve nada
 		"""
 		# Cambiar la ruta segun donde se lo guarde
-		ruta_archivo = "C:\\Users\\Franco Calvacho\\Desktop\\Proyecto Vuelos-AEDII\\Datos\\AeropuertosArg.csv"
+		# ruta_archivo = "C:\\Users\\Franco Calvacho\\Desktop\\Proyecto Vuelos-AEDII\\Datos\\AeropuertosArg.csv"
+		ruta_archivo = buscarArchivo("AeropuertosArg.csv")
 		with open(ruta_archivo) as archivo_vertices:
 			leer_vertices = csv.reader(archivo_vertices)
 			for fila_vert in leer_vertices:
@@ -51,7 +55,8 @@ class Graph (object):
 			Postcondicion: no devuelve nada
 		"""
 		# Cambiar la ruta segun donde se lo guarde
-		ruta_archivo = "C:\\Users\\Franco Calvacho\\Desktop\\Proyecto Vuelos-AEDII\\Datos\\RutasAeropuertos.csv"
+		# ruta_archivo = "C:\\Users\\Franco Calvacho\\Desktop\\Proyecto Vuelos-AEDII\\Datos\\RutasAeropuertos.csv"
+		ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
 		with open(ruta_archivo) as archivo_edges:
 			leer_edges  = csv.reader(archivo_edges)
 			for fila_edge in leer_edges:
@@ -93,8 +98,9 @@ class Graph (object):
 		"""
 		return self._graph_dict
 
-# # Testing 
-# grafo = Graph()
-# grafo.crearGrafoCero()
-# # No se asusten que pprint lo imprime desordenado pero print normal no
-# pprint.pprint(grafo.getGrafo())
+# Testing 
+grafo = Graph()
+grafo.crearGrafoCero()
+# No se asusten que pprint lo imprime desordenado pero print normal no
+pprint.pprint(grafo.getGrafo())
+# print(buscarArchivo("AeropuertosArg.csv"))
