@@ -99,8 +99,8 @@ class Graph (object):
 		return self._graph_dict
 
 # Testing 
-grafo = Graph()
-grafo.crearGrafoCero()
+# grafo = Graph()
+# grafo.crearGrafoCero()
 # No se asusten que pprint lo imprime desordenado pero print normal no
-pprint.pprint(grafo.getGrafo())
+# pprint.pprint(grafo.getGrafo())
 # print(buscarArchivo("AeropuertosArg.csv"))
