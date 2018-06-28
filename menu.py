@@ -17,7 +17,7 @@ def MP():
     print("║   2. INFO. DE LOS AEROPUERTOS   ║")
     print("║   3. RECORRIDOS DEL GRAFO       ║")
     print("║   4. OPERACIONES DEL GRAFO      ║")
-    print("║   5. VISUALIZAR EN MAPA         ║")
+    print("║   5. VISUALIZACIÓN EN MAPA      ║")
     print("║   6. COMPLEJIDADES DE LOS ALG.  ║")
     print("║   7. SALIR                      ║")
     print("╚═════════════════════════════════╝")
@@ -43,11 +43,11 @@ def Recorridos(grafo):
         except:
             print("Opcion no válida.")
             wait()
-        if opc>3 or opc<1:
+        if opc>3 or opc<1: #Límites
             print("Opcion no válida.")
             wait()
             continue
-        if opc == 3:
+        if opc == 3: #Salir
             break
         if opc == 1:
             i=0
@@ -84,11 +84,11 @@ def Estacion():
         except:
             print("Opcion no válida.")
             wait()
-        if opc>5 or opc<1:
+        if opc>5 or opc<1: #Límites
             print("Opcion no válida.")
             wait()
             continue
-        if opc == 5:
+        if opc == 5: #Salir
             break
         ruteoAleatorio(opc)
         if opc==1:
@@ -102,11 +102,114 @@ def Estacion():
         wait()
         break
 
+def InfoAeropuertos():
+    while(True):
+        os.system('cls')
+        print("╔═════════════════════════════════╗")
+        print("║   INFORMACIÓN DE AEROPUERTOS    ║")
+        print("╠═════════════════════════════════╣")
+        print("║   1. DATOS DE AEROPUERTOS       ║")
+        print("║   2. RUTAS ENTRE AEROPUERTOS    ║")
+        print("║   3. DISTANCIAS DE LAS RUTAS    ║")
+        print("║   4. ATRÁS                      ║")
+        print("╚═════════════════════════════════╝")
+        try:
+            opc = int(input("Su opción: "))
+        except:
+            print("Opcion no válida.")
+            wait()
+        if opc>4 or opc<1: #Límites
+            print("Opcion no válida.")
+            wait()
+            continue
+        if opc == 4: #Salir
+            break
+        wait()
+
+def Operaciones():
+    while(True):
+        os.system('cls')
+        print("╔═════════════════════════════════╗")
+        print("║      OPERACIONES DEL GRAFO      ║")
+        print("╠═════════════════════════════════╣")
+        print("║   1. ALGORITMO DE DIJKSTRA      ║")
+        print("║   2. ALG. DE FLOYD-WARSHALL     ║")
+        print("║   3. DETECTAR CICLOS            ║")
+        print("║   4. VER VÉRTICES AISLADOS      ║")
+        print("║   5. VER MATRIZ DE ADYACENCIA   ║")
+        print("║   6. VER LISTA DE ADYACENCIA    ║")
+        print("║   7. ATRÁS                      ║")
+        print("╚═════════════════════════════════╝")
+        try:
+            opc = int(input("Su opción: "))
+        except:
+            print("Opcion no válida.")
+            wait()
+        if opc>7 or opc<1: #Límites
+            print("Opcion no válida.")
+            wait()
+            continue
+        if opc == 7: #Salir
+            break
+        wait()
+
+def Visualizar():
+    while(True):
+        os.system('cls')
+        print("╔═════════════════════════════════╗")
+        print("║      VISUALIZACIÓN EN MAPA      ║")
+        print("╠═════════════════════════════════╣")
+        print("║   1. VISUALIZAR AEROPUERTOS     ║")
+        print("║   2. VISUAIZAR RUTAS            ║")
+        print("║   3. ATRÁS                      ║")
+        print("╚═════════════════════════════════╝")
+        try:
+            opc = int(input("Su opción: "))
+        except:
+            print("Opcion no válida.")
+            wait()
+        if opc>3 or opc<1: #Límites
+            print("Opcion no válida.")
+            wait()
+            continue
+        if opc == 3: #Salir
+            break
+        wait()
+
+def Complejidades():
+    while(True):
+        os.system('cls')
+        print("╔═════════════════════════════════╗")
+        print("║ COMPLEJIDADES DE LOS ALGORITMOS ║")
+        print("╠═════════════════════════════════╣")
+        print("║   1. BFS                        ║")
+        print("║   2. DFS                        ║")
+        print("║   3. DIJKSTRA                   ║")
+        print("║   4. FLOYD-WARSHALL             ║")
+        print("║   5. DETECTAR CICLOS            ║")
+        print("║   6. ATRÁS                      ║")
+        print("╚═════════════════════════════════╝")
+        try:
+            opc = int(input("Su opción: "))
+        except:
+            print("Opcion no válida.")
+            wait()
+        if opc>6 or opc<1: #Límites
+            print("Opcion no válida.")
+            wait()
+            continue
+        if opc == 6: #Salir
+            break
+        wait()
 
 #MAIN
+#Operaciones iniciales obligatorias
 dic = Graph()
 dic.crearGrafoCero()
 grafo = dic.getGrafo()
+ruteoAleatorio(1) #la mejor estación
+
+
 opc = 0
 while opc!=7:
     opc = MP()
@@ -116,7 +219,16 @@ while opc!=7:
         continue
     if opc == 1:
         Estacion()
+    if opc == 2:
+        InfoAeropuertos()
     if opc == 3:
         Recorridos(grafo)
+    if opc == 4:
+        Operaciones()
+    if opc == 5:
+        Visualizar()
+    if opc == 6:
+        Complejidades()
+
 
 os.system('cls')
