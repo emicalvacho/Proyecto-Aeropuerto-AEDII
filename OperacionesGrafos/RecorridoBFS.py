@@ -23,5 +23,5 @@ def BFS(origen,grafo):
 dicc = Graph()
 dicc.crearGrafoCero()
 grafo = dicc.getGrafo()
-BFS(4,grafo)
+BFS(origen,grafo)
 os.system("pause")
