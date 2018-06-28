@@ -3,6 +3,7 @@ import sys
 import msvcrt as m
 def wait():
     m.getch()
+    from Datos.rutasVacias import rutasVacias
 from Grafo.crearDicGrafo import Graph
 from Grafo.distanciaRutas import distancia
 from OperacionesGrafos.RecorridoBFS import BFS
@@ -207,6 +208,7 @@ def Complejidades():
 dic = Graph()
 dic.crearGrafoCero()
 grafo = dic.getGrafo()
+rutasVacia()
 ruteoAleatorio(1) #la mejor estación
 
 
