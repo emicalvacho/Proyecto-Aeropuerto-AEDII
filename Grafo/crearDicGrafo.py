@@ -1,6 +1,7 @@
 """crearDicGrafo es una clase que se ocupa de crear un grafo como diccionario desde los 
 archivos CSV, además tiene la posibilidad de ver sus vertices y aristas.
-Utiliza la libreria csv para trabajar con dichos archivos y pprint para debuggin"""
+Utiliza la libreria csv para trabajar con dichos archivos y pprint para debuggin.
+Ademas utiliza el script de buscador de archivos para acortar rutas conjunto a la libreria sys"""
 
 import csv
 import pprint
@@ -39,8 +40,6 @@ class Graph (object):
 			Precondicion: no recibe parametros
 			Postcondicion: no devuelve nada
 		"""
-		# Cambiar la ruta segun donde se lo guarde
-		# ruta_archivo = "C:\\Users\\Franco Calvacho\\Desktop\\Proyecto Vuelos-AEDII\\Datos\\AeropuertosArg.csv"
 		ruta_archivo = buscarArchivo("AeropuertosArg.csv")
 		with open(ruta_archivo) as archivo_vertices:
 			leer_vertices = csv.reader(archivo_vertices)
@@ -54,8 +53,6 @@ class Graph (object):
 			Precondicion: no recibe parametros
 			Postcondicion: no devuelve nada
 		"""
-		# Cambiar la ruta segun donde se lo guarde
-		# ruta_archivo = "C:\\Users\\Franco Calvacho\\Desktop\\Proyecto Vuelos-AEDII\\Datos\\RutasAeropuertos.csv"
 		ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
 		with open(ruta_archivo) as archivo_edges:
 			leer_edges  = csv.reader(archivo_edges)
@@ -64,10 +61,10 @@ class Graph (object):
 				edge = set(aux)
 				(vertex1,vertex2) = tuple(edge) 
 				if vertex1 in self._graph_dict:
-					self._graph_dict[vertex1].append(vertex2)
-				else:
-					self._graph_dict[vertex1] = [vertex2]
-
+					if vertex2 not in self._graph_dict[vertex1]:
+						self._graph_dict[vertex1].append(vertex2)
+						self._graph_dict[vertex2].append(vertex1)
+ 
 	def _generate_edges(self):
 		"""
 			Funcionamiento: genera las aristas para mostrarlas
@@ -101,6 +98,6 @@ class Graph (object):
 # Testing 
 # grafo = Graph()
 # grafo.crearGrafoCero()
-# No se asusten que pprint lo imprime desordenado pero print normal no
+# # No se asusten que pprint lo imprime desordenado pero print normal no
 # pprint.pprint(grafo.getGrafo())
-# print(buscarArchivo("AeropuertosArg.csv"))
+# # print(buscarArchivo("AeropuertosArg.csv"))

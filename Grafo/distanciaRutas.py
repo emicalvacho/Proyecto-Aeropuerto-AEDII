@@ -1,6 +1,7 @@
 """geo_distance Es el script que me permite calcular las distancias entre dos aeropuertos,
-utilizando la libreria math de Python para realizar determinadas operaciones matermaticas
-y la libreria csv para abrir la lista de aeropuertos."""
+utilizando la libreria math de Python para realizar determinadas operaciones matermaticas 
+y la libreria csv para abrir la lista de aeropuertos.
+Ademas utiliza el script de buscador de archivos para acortar rutas conjunto a la libreria sys"""
 
 from math import cos,radians,sin,pow,asin,sqrt
 import csv
@@ -16,18 +17,17 @@ def distancia(id1, id2):
 	"""
 	radio = 6371 # Este es el radio de la Tierra
 
-	# ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\AeropuertosArg.csv"
 	ruta_archivo = buscarArchivo("AeropuertosArg.csv") 
 	with open(ruta_archivo) as archivo_csv:
 		leer = csv.reader(archivo_csv)
 		encontro = False
 		encontro2 = False
 		for linea in leer:
-			if linea[0] == id1:
+			if float(linea[0]) == id1:
 				lat1 = float(linea[4])
 				long1 = float(linea[5])
 				encontro = True
-			if linea[0] == id2:
+			if float(linea[0]) == id2:
 				lat2 = float(linea[4])
 				long2 = float(linea[5])
 				encontro2 = True
@@ -48,4 +48,5 @@ def distancia(id1, id2):
 	return dist
 
 # # Testing
-#print(distancia(8,20))
+# print(distancia(8,20))
+# Debe imprimir 821.0526371448975

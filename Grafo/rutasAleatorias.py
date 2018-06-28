@@ -1,7 +1,8 @@
 """rutasAleatorias crea un archivo con las rutas disponibles según la temporada que el usuario ingrese y las
 respectivas distancias entre dichas rutas.
 Se utiliza la librería csv para operar con este tipo de archivos, random para crear una aleatoridad de rutas
-y el script de distanciasRutas para calcular la distancia entre las rutas."""
+y el script de distanciasRutas para calcular la distancia entre las rutas.
+Ademas utiliza el script de buscador de archivos para acortar rutas conjunto a la libreria sys."""
 
 import csv
 import random
@@ -9,6 +10,7 @@ from distanciaRutas import distancia
 import sys
 sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
+
 
 def eleccion_temporada():
 	"""
@@ -34,7 +36,6 @@ def list_ID_aeropuertos():
 		Postcondiciones: devuelve una lista de las ID y coordenadas de los aeropuertos
 	"""
 	# Cambiar la ruta segun donde se lo guarde
-	# ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\AeropuertosArg.csv"
 	ruta_archivo = buscarArchivo("AeropuertosArg.csv")
 	with open(ruta_archivo) as archivo_csv:
 		leer = csv.reader(archivo_csv)
@@ -63,15 +64,13 @@ def ruteoAleatorio():
 	# longitud de lista_ID. Pero como maximo solo dejamos hasta 35 rutas.
 	# Minimo de rutas: las que se desee. Pero vamos a poner hasta 20 rutas
 	if temporada == 1: # Verano
-		cant_aristas = random.randrange(20,36)
+		cant_aristas = random.randrange(30,36)
 	elif temporada == 2: # Otoño
 		cant_aristas = random.randrange(20,21)
 	elif temporada == 3: # Invierno
 		cant_aristas = random.randrange(20,26)
 	elif temporada == 4: # Primavera
 		cant_aristas = random.randrange(20,31)
-
-	# print("\nCantidad de aristas: ",cant_aristas)
 
 	# Se buscan dos vértices aleatorios distintos y se los agrega en forma
 	# de tuplas a una lista de rutas. Esto se hace hasta que el contador
@@ -82,25 +81,17 @@ def ruteoAleatorio():
 		r1 = random.choice(lista_ID)
 		r2 = random.choice(lista_ID)
 		if (r1 != r2):
-			dist = distancia(r1[0],r2[0])
-			t = (r1[0],r2[0],dist)
-			if (t not in lista_rutas):
-				lista_rutas.append(t)
+			dist = distancia(float(r1[0]),float(r2[0]))
+			t1 = (r1[0],r2[0],dist)
+			t2 = (r2[0],r1[0],dist)
+			if ((t1 not in lista_rutas) and (t2 not in lista_rutas)):
+				lista_rutas.append(t1)
 				cont += 1
 
-	# Verifico la lista_rutas
-	# c=1
-	# for item in lista_rutas:
-	# 	print(c,item)
-	# 	c +=1
-
 	# Creo el archivo de las rutas de los aeropuertos
-	# Cambiar la ruta segun donde se lo guarde
-	# ruta_archivo = "C:\\Users\\Tino\\Desktop\\Facultad\\Algoritmos y estructuras de datos 2\\PROYECTO FINAL\\Datos\\RutasAeropuertos.csv"
 	ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
 	with open(ruta_archivo,'w',newline = '') as archivo_rutas:
 		escribir = csv.writer(archivo_rutas)
 		escribir.writerows(lista_rutas)
 
-# Testing (para probar script quiten el comentario de la implementacion)
 ruteoAleatorio()
