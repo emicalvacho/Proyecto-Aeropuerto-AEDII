@@ -1,4 +1,5 @@
 import sys
+import math
 sys.path.append("..")
 from Grafo.crearDicGrafo import Graph
 from Grafo.distanciaRutas import distancia
@@ -15,13 +16,17 @@ def FloydWarshall(grafo):
 		Postcondiciones: devuelve la matriz de cierre transitivo del grafo
 	"""
 
-    #Creo la matriz de Nro.vertices x Nro.vertices
+    #Creo la matriz de Nro.vertices x Nro.vertices con todos los valores en infinito
     v = len(grafo.vertices())
-    dist = [[0 for y in range(v)] for y in range(v)]
+    dist = [[float("inf") for y in range(v)] for y in range(v)]
     #Lleno la matriz con las distancias
     for x in range(v):
         for y in range(v):
-            dist[x][y] = distancia(x, y)
+            if int(distancia(x+1, y+1))!=-1: #Sólo si es alcanzable
+                dist[x][y] = int(distancia(x+1, y+1)) #+1 porque no existe el nodo 0
+    #La distancia de cada aeropuerto a sí mismo es cero
+    for x in range(v):
+        dist[x][x] = 0
     #Algoritmo principal
     for k in range(v):
         for i in range(v):
@@ -31,8 +36,8 @@ def FloydWarshall(grafo):
     return dist
 
 # Testing
-# grafo = Graph()
-# grafo.crearGrafoCero()
-# FW = FloydWarshall(grafo)
-# for x in FW:
-#    print(x)
+grafo = Graph()
+grafo.crearGrafoCero()
+FW = FloydWarshall(grafo)
+for x in FW:
+    print(x)
