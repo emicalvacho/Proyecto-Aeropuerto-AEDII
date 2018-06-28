@@ -44,8 +44,9 @@ class Graph (object):
 		with open(ruta_archivo) as archivo_vertices:
 			leer_vertices = csv.reader(archivo_vertices)
 			for fila_vert in leer_vertices:
-				if fila_vert[0] not in self._graph_dict:
-					self._graph_dict[fila_vert[0]] = [] 
+				vert = int(fila_vert[0])
+				if vert not in self._graph_dict:
+					self._graph_dict[vert] = [] 
 
 	def _add_edges(self):
 		"""
@@ -57,7 +58,9 @@ class Graph (object):
 		with open(ruta_archivo) as archivo_edges:
 			leer_edges  = csv.reader(archivo_edges)
 			for fila_edge in leer_edges:
-				aux = (fila_edge[0],fila_edge[1])
+				v1 = int(fila_edge[0])
+				v2 = int(fila_edge[1])
+				aux = (v1,v2)
 				edge = set(aux)
 				(vertex1,vertex2) = tuple(edge) 
 				if vertex1 in self._graph_dict:
@@ -100,4 +103,4 @@ class Graph (object):
 # grafo.crearGrafoCero()
 # # No se asusten que pprint lo imprime desordenado pero print normal no
 # pprint.pprint(grafo.getGrafo())
-# # print(buscarArchivo("AeropuertosArg.csv"))
+# print(buscarArchivo("AeropuertosArg.csv"))
