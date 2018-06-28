@@ -30,9 +30,9 @@ def FloydWarshall(grafo):
                     dist[i][j] = dist[i][k] + dist[k][j]
     return dist
 
-#PRUEBA
-grafo = Graph()
-grafo.crearGrafoCero()
-FW = FloydWarshall(grafo)
-for x in FW:
-   print(x)
+# Testing
+# grafo = Graph()
+# grafo.crearGrafoCero()
+# FW = FloydWarshall(grafo)
+# for x in FW:
+#    print(x)
