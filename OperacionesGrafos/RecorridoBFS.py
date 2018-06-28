@@ -11,7 +11,7 @@ def BFS(origen,grafo):
 		if actual not in visitados:
 			print(actual,"-> ",end="")
 			visitados.append(actual)
-		S = str(actual)
+		S = actual
 		for key in grafo[S]: #grafo.vertices() ?
 			if key not in visitados:
 				cola.append(key)
