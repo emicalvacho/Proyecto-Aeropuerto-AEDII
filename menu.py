@@ -3,14 +3,20 @@ import sys
 import msvcrt as m
 def wait():
     m.getch()
-    from Datos.rutasVacias import rutasVacias
+from Datos.rutasVacias import rutasVacias
 from Grafo.crearDicGrafo import Graph
 from Grafo.distanciaRutas import distancia
 from OperacionesGrafos.RecorridoBFS import BFS
 from Grafo.rutasAleatorias import ruteoAleatorio
+from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 
 def MP():
     os.system('cls')
+    print(grafo.keys())
+    print(grafo[15])
+    print(grafo[13])
+    print(grafo[10])
+    print(grafo[7])
     print("╔═════════════════════════════════╗")
     print("║          MENÚ PRINCIPAL         ║")
     print("╠═════════════════════════════════╣")
@@ -152,6 +158,10 @@ def Operaciones():
             continue
         if opc == 7: #Salir
             break
+        if opc == 5:
+            print("Matriz de adyacencia: \n")
+            for x in (matrizAdyacencia(dic)): #Le paso el grafo entero
+                print(x)
         wait()
 
 def Visualizar():
@@ -208,9 +218,8 @@ def Complejidades():
 dic = Graph()
 dic.crearGrafoCero()
 grafo = dic.getGrafo()
-rutasVacia()
+rutasVacias()
 ruteoAleatorio(1) #la mejor estación
-
 
 opc = 0
 while opc!=7:
