@@ -6,28 +6,10 @@ Ademas utiliza el script de buscador de archivos para acortar rutas conjunto a l
 
 import csv
 import random
-from distanciaRutas import distancia
+from Grafo.distanciaRutas import distancia
 import sys
 sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
-
-
-def eleccion_temporada():
-	"""
-		Funcionamiento: el usuario ingresa una temporada
-		Precondiciones: no recibe parametros
-		Postcondiciones: devuelve la temporada elegida
-	"""
-	while True:
-		print("Opciones de temporada:")
-		print("1- Verano.\n2- Otoño.\n3- Invierno.\n4- Primavera.")
-		temporada = int(input("Ingrese la temporada del año: "))
-		if (temporada<1 or temporada>4):
-			print("Por favor ingrese un temporada válido.")
-		else:
-			break
-
-	return temporada
 
 def list_ID_aeropuertos():
 	"""
@@ -50,19 +32,20 @@ def list_ID_aeropuertos():
 
 	return list_ID
 
-def ruteoAleatorio():
+def ruteoAleatorio(opc):
 	"""
 		Funcionamiento: crea un archivo csv con las rutas dispobibles aleatoriamente
 		Precondiciones: no recibe parametros
 		Postcondiciones: no devuelve nada
 	"""
-	temporada = eleccion_temporada()
+	temporada = opc
 	lista_ID = list_ID_aeropuertos()
 
 	# Calculo la cantidad de aristas o rutas
 	# Maximo de rutas: [v*(v-1)]/2, donde v son la cantidad de vertices, o sea la
 	# longitud de lista_ID. Pero como maximo solo dejamos hasta 35 rutas.
 	# Minimo de rutas: las que se desee. Pero vamos a poner hasta 20 rutas
+	cant_aristas=1
 	if temporada == 1: # Verano
 		cant_aristas = random.randrange(30,36)
 	elif temporada == 2: # Otoño
@@ -93,5 +76,3 @@ def ruteoAleatorio():
 	with open(ruta_archivo,'w',newline = '') as archivo_rutas:
 		escribir = csv.writer(archivo_rutas)
 		escribir.writerows(lista_rutas)
-
-ruteoAleatorio()
