@@ -81,7 +81,7 @@ def ruteoAleatorio():
 		r1 = random.choice(lista_ID)
 		r2 = random.choice(lista_ID)
 		if (r1 != r2):
-			dist = distancia(float(r1[0]),float(r2[0]))
+			dist = round(distancia(float(r1[0]),float(r2[0])),2)
 			t1 = (r1[0],r2[0],dist)
 			t2 = (r2[0],r1[0],dist)
 			if ((t1 not in lista_rutas) and (t2 not in lista_rutas)):
