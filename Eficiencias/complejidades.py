@@ -6,9 +6,9 @@ def complejidades(opc):
 		print("Recorrido DFS es O(V+E) ")
 	if opc == 3:
 		print("Algoritmo DIJKSTRA es O((E+V) * log V)")
-	if opc == 5:
+	if opc == 4:
 		print("Algoritmo FLOYD-WARSHALL es O(V^3)")
-	if opc == 6:
+	if opc == 5:
 		print("Algoritmo DETECTAR CICLOS es O(V)")
 
 # complejidadesAlg(1)
