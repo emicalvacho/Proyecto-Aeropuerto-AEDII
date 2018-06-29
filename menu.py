@@ -3,7 +3,6 @@ import sys
 import msvcrt as m
 def wait():
     m.getch()
-from Datos.rutasVacias import rutasVacias
 from Grafo.crearDicGrafo import Graph
 from Grafo.distanciaRutas import distancia
 from OperacionesGrafos.RecorridoBFS import BFS
@@ -213,15 +212,17 @@ def Complejidades():
             break
         wait()
 
-#MAIN
-#Operaciones iniciales obligatorias
-dic = Graph()
-dic.crearGrafoCero()
-grafo = dic.getGrafo()
-#rutasVacias()
-#ruteoAleatorio(1) #la mejor estación
-
+# MAIN
 def main():
+    #Operaciones iniciales obligatorias
+    # Crea las rutas aleatorias con estacion por defecto
+    ruteoAleatorio(1) #la mejor estación
+    # Instancia un objeto como grafo
+    dic = Graph()
+    # Crea el grafo ya con los archivos listos
+    dic.crearGrafoCero()
+    # Se obtiene el grafo y se lo guarda en un auxiliar
+    grafo = dic.getGrafo()
     opc = 0
     while opc!=7:
         opc = MP()
