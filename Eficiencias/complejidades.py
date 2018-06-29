@@ -1,4 +1,4 @@
-def complejidadesAlg(opc):
+def complejidades(opc):
 	print("La complejidad del ",end="") 
 	if opc == 1:
 		print("Recorrido BFS es O(V+E)")
