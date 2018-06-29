@@ -8,6 +8,7 @@ import csv
 import random
 from Grafo.distanciaRutas import distancia
 import sys
+import pandas as pd
 sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
 
@@ -72,7 +73,14 @@ def ruteoAleatorio(opc):
 				cont += 1
 
 	# Creo el archivo de las rutas de los aeropuertos
+	df = pd.DataFrame(lista_rutas)
+	dir = os.getcwd()
+	dir+="\\Datos\\RutasAeropuertos.csv"
+	df.to_csv(dir,index=False,header=False)
+	
+	"""
 	ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
 	with open(ruta_archivo,'w',newline = '') as archivo_rutas:
 		escribir = csv.writer(archivo_rutas)
 		escribir.writerows(lista_rutas)
+	"""
