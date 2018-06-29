@@ -221,25 +221,27 @@ grafo = dic.getGrafo()
 #rutasVacias()
 #ruteoAleatorio(1) #la mejor estación
 
-opc = 0
-while opc!=7:
-    opc = MP()
-    if (opc>7 or opc<1) and opc!=-1: #Al retornar -1 indica que el user no ingresó int
-        print("Opcion no válida.")   # No entra porque ya lo regañó la función
-        wait()
-        continue
-    if opc == 1:
-        Estacion()
-    if opc == 2:
-        InfoAeropuertos()
-    if opc == 3:
-        Recorridos(grafo)
-    if opc == 4:
-        Operaciones()
-    if opc == 5:
-        Visualizar()
-    if opc == 6:
-        Complejidades()
+def main():
+    opc = 0
+    while opc!=7:
+        opc = MP()
+        if (opc>7 or opc<1) and opc!=-1: #Al retornar -1 indica que el user no ingresó int
+            print("Opcion no válida.")   # No entra porque ya lo regañó la función
+            wait()
+            continue
+        if opc == 1:
+            Estacion()
+        if opc == 2:
+            InfoAeropuertos()
+        if opc == 3:
+            Recorridos(grafo)
+        if opc == 4:
+            Operaciones()
+        if opc == 5:
+            Visualizar()
+        if opc == 6:
+            Complejidades()
+    os.system('cls')
 
-
-os.system('cls')
+if __name__ == '__main__':
+    main()
