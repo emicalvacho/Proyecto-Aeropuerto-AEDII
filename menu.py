@@ -152,7 +152,7 @@ def InfoAeropuertos(grafo):
 			mostrarDistancias()
 		wait()		
 
-def Operaciones():
+def Operaciones(dic):
 	while(True):
 		os.system('cls')
 		print("╔═════════════════════════════════╗")
@@ -179,7 +179,11 @@ def Operaciones():
 			break
 		if opc == 5:
 			print("Matriz de adyacencia: \n")
-			for x in (matrizAdyacencia(dic)): #Le paso el grafo entero
+			for x in matrizAdyacencia(dic): #Le paso el grafo entero
+				print(x)
+		if opc == 6:
+			print("Matriz de adyacencia: \n")
+			for x in matrizAdyacencia(dic): #Le paso el grafo entero
 				print(x)
 		wait()
 
@@ -258,7 +262,7 @@ def main():
 		if opc == 3:
 			Recorridos(grafo)
 		if opc == 4:
-			Operaciones()
+			Operaciones(dic)
 		if opc == 5:
 			Visualizar()
 		if opc == 6:
