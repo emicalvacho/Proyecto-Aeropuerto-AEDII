@@ -218,8 +218,8 @@ def Complejidades():
 dic = Graph()
 dic.crearGrafoCero()
 grafo = dic.getGrafo()
-rutasVacias()
-ruteoAleatorio(1) #la mejor estación
+#rutasVacias()
+#ruteoAleatorio(1) #la mejor estación
 
 opc = 0
 while opc!=7:
