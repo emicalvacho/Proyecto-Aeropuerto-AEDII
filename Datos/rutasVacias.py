@@ -16,6 +16,6 @@ def rutasVacias():
 	f = open (ruta_archivo,'w')
 	f.close()
 
-rutasVacias()
+#rutasVacias()
 
 		
