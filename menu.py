@@ -2,7 +2,8 @@ import os
 import sys
 import msvcrt as m
 def wait():
-	m.getch()
+	# m.getch()
+	os.system("pause")
 from Grafo.crearDicGrafo import Graph
 from Grafo.distanciaRutas import distancia
 from Grafo.rutasAleatorias import ruteoAleatorio
@@ -10,7 +11,9 @@ from MostrarGrafo.mostrarDatos import mostrarDatos
 from MostrarGrafo.mostrarAeropuertos import mostrarAeropuertos
 from MostrarGrafo.mostrarDistancias import mostrarDistancias
 from OperacionesGrafos.RecorridoBFS import BFS
+from OperacionesGrafos.RecorridoDFS import DFS
 from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
+from Eficiencias.complejidades import complejidades
 
 def MP():
 	os.system('cls')
@@ -54,7 +57,20 @@ def Recorridos(grafo):
 		if opc == 3: #Salir
 			break
 		if opc == 1:
-			i=0
+			opc2=0
+			while opc2<1 or opc2>25:
+				try:
+					opc2 = int(input("¿Desde qué nodo desea comenzar? (1-25) -> "))
+				except:
+					print("Opcion no válida.") #Si no ingreso un int
+					wait()
+					break
+				if opc2<1 or opc2>25:
+					print("Opcion no válida.") # Si ingreso un nodo invalido
+					wait()
+					break
+				DFS(opc2, grafo)
+				wait()
 		if opc == 2:
 			opc2=0
 			while opc2<1 or opc2>25:
@@ -214,6 +230,7 @@ def Complejidades():
 			continue
 		if opc == 6: #Salir
 			break
+		complejidades(opc)	
 		wait()
 
 # MAIN
