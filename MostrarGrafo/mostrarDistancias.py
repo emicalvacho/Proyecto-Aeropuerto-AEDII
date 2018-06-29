@@ -5,7 +5,7 @@ sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
 from MostrarGrafo.mostrarAeropuertos import listaAero
 
-def mostrarDistacias():
+def mostrarDistancias():
 	ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
 	with open(ruta_archivo) as archivo_rutas:
 		leer_arc = csv.reader(archivo_rutas)
