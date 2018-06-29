@@ -5,11 +5,12 @@ def wait():
 	m.getch()
 from Grafo.crearDicGrafo import Graph
 from Grafo.distanciaRutas import distancia
-from OperacionesGrafos.RecorridoBFS import BFS
 from Grafo.rutasAleatorias import ruteoAleatorio
-from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 from MostrarGrafo.mostrarDatos import mostrarDatos
 from MostrarGrafo.mostrarAeropuertos import mostrarAeropuertos
+from MostrarGrafo.mostrarDistancias import mostrarDistancias
+from OperacionesGrafos.RecorridoBFS import BFS
+from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 
 def MP():
 	os.system('cls')
@@ -132,7 +133,7 @@ def InfoAeropuertos(grafo):
 		if opc == 2:
 			mostrarAeropuertos(grafo)
 		if opc == 3:  
-			pass 
+			mostrarDistancias()
 		wait()		
 
 def Operaciones():
