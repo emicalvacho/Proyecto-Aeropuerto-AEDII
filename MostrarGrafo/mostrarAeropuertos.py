@@ -8,13 +8,7 @@ from Grafo.crearDicGrafo import Graph
 sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
 
-def mostrarAeropuertos(grafo):
-	"""
-		Funcionamiento: imprime lista de adyacencia pero con nombres
-		Precondicion: recibe un grafo
-		Postcondicion: no devuelve nada
-	"""
-
+def listaAero():
 	# Creamos una lista de tuplas con (id,nombreAeropuerto)
 	# Leyendo el archivo de aeropuertos
 	ruta_archivo = buscarArchivo("AeropuertosArg.csv")
@@ -25,7 +19,16 @@ def mostrarAeropuertos(grafo):
 			indice = int(fila[0])
 			nombreAero = fila[1]
 			lista_aeropuertos += [(indice,nombreAero)]
+	return lista_aeropuertos
 
+def mostrarAeropuertos(grafo):
+	"""
+		Funcionamiento: imprime lista de adyacencia pero con nombres
+		Precondicion: recibe un grafo
+		Postcondicion: no devuelve nada
+	"""
+
+	lista_aeropuertos = listaAero()
 	
 	for i in range(len(lista_aeropuertos)): # Se itera toda la lista de aeropuertos
 		
