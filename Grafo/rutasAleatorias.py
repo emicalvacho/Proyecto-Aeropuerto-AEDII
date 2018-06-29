@@ -6,12 +6,12 @@ Ademas utiliza el script de buscador de archivos para acortar rutas conjunto a l
 
 import csv
 import random
-from Grafo.distanciaRutas import distancia
 import pandas as pd
 import sys
 import os
 sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
+from Grafo.distanciaRutas import distancia
 
 def list_ID_aeropuertos():
 	"""
