@@ -1,5 +1,6 @@
 import os
 import sys
+import pprint
 import msvcrt as m
 def wait():
 	# m.getch()
@@ -14,6 +15,7 @@ from OperacionesGrafos.RecorridoBFS import BFS
 from OperacionesGrafos.RecorridoDFS import DFS
 from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 from Eficiencias.complejidades import complejidades
+from Visualización.Mapas import MapaAeropuertos,MapaRutas
 
 def MP():
 	os.system('cls')
@@ -182,9 +184,8 @@ def Operaciones(dic):
 			for x in matrizAdyacencia(dic): #Le paso el grafo entero
 				print(x)
 		if opc == 6:
-			print("Matriz de adyacencia: \n")
-			for x in matrizAdyacencia(dic): #Le paso el grafo entero
-				print(x)
+			print("Lista de adyacencia: \n")
+			pprint.pprint(dic.getGrafo())
 		wait()
 
 def Visualizar():
@@ -208,6 +209,10 @@ def Visualizar():
 			continue
 		if opc == 3: #Salir
 			break
+		if opc == 1:
+			MapaAeropuertos()
+		if opc == 2:
+			MapaRutas()
 		wait()
 
 def Complejidades():

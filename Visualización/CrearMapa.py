@@ -8,8 +8,25 @@ from pathlib import Path
 sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
 
+"""def colorRandom():
+    # return "#000000"
+    return "#"+str(hex(random.randint(16711680,8684676)))"""
+
 def colorRandom():
-    return "#"+str(hex(random.randint(0,16777216))[2:])
+    a = hex(random.randrange(0,256))
+    b = hex(random.randrange(0,256))
+    c = hex(random.randrange(0,256))
+    a = a[2:]
+    b = b[2:]
+    c = c[2:]
+    if len(a)<2:
+        a = "0" + a
+    if len(b)<2:
+        b = "0" + b
+    if len(c)<2:
+        c = "0" + c
+    z = a + b + c
+    return "#" + z.upper()
 
 def CrearMapaRutas():
     ruta=buscarArchivo("AeropuertosArg.csv")
@@ -90,7 +107,6 @@ def CrearMapaRutas():
 
 
     directorio=Path(os.getcwd())
-    directorio=directorio.parent
     directorio=str(directorio)
     directorio+='\\Visualización\\MapaRutas.html'
     map_osm.save(directorio)
@@ -144,7 +160,6 @@ def CrearMapaAeropuertos():
 
     map_osm.get_root().html.add_child(folium.Element(leyenda))
     directorio=Path(os.getcwd())
-    directorio=directorio.parent
     directorio=str(directorio)
     directorio+='\\Visualización\\MapaAeropuertos.html'
     map_osm.save(directorio)
