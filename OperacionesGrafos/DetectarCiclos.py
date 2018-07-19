@@ -1,11 +1,5 @@
 import os
 import sys
-import pprint
-
-# import crearDicGrafo
-# dicc = crearDicGrafo.Graph()
-# dicc.crearGrafoCero()
-# grafo = dicc.getGrafo()
 
 
 def find_cycle(origen,grafo):
