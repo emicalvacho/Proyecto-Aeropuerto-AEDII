@@ -1,13 +1,17 @@
-#TAD DE DIJKSTRA, algoritmo de caminos mínimos.
-#es un algoritmo para la determinación del camino más corto.
-#dado un vértice origen.
-#hacia el resto de los vértices en un grafo que tiene pesos en cada arista.
-####################################
-#ninguna de las libreria se me importan bien
+#############################################################################################
+#                           Datos de AlgoritmoDijkstra.py                                   #
+#                                                                                           #
+#############################################################################################
+# - Autor: Javier Figueroa                                                                  #
+#############################################################################################
+# - Funcionalidad: es un algoritmo para la determinación del camino más corto, dado un      #
+# vértice origen hacia el resto de los vértices en un grafo que tiene pesos en cada arista. #
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
+#############################################################################################
 
 import sys
 import heapq
-#from Grafo import graph NO SE IMPORTA BIEN
 
 import Queue as queue
 
@@ -32,8 +36,8 @@ def heapsort(iterable):
     return [heapop(h)for i in range (len(h))]
 
 
-
-
+# Testing
+"""
 g={	'a' : ['d'],
     'b' : ['c'],
     'c' : ['b','d','e'],
@@ -41,5 +45,5 @@ g={	'a' : ['d'],
     'e' : ['c'],
     'f' : []
 }
-
+"""
 
