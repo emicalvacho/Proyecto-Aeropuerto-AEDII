@@ -21,6 +21,7 @@ from MostrarGrafo.mostrarAeropuertos import mostrarAeropuertos
 from MostrarGrafo.mostrarDistancias import mostrarDistancias
 from OperacionesGrafos.RecorridoBFS import BFS
 from OperacionesGrafos.RecorridoDFS import DFS
+from OperacionesGrafos.AlgoritmoFloydWarshall import FloydWarshall
 from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 from Eficiencias.complejidades import complejidades
 from Visualización.Mapas import MapaAeropuertos,MapaRutas
@@ -161,9 +162,9 @@ def InfoAeropuertos(grafo):
 			mostrarDatos()
 		if opc == 2:
 			mostrarAeropuertos(grafo)
-		if opc == 3:  
+		if opc == 3:
 			mostrarDistancias()
-		wait()		
+		wait()
 
 def Operaciones(dic):
 	while(True):
@@ -190,6 +191,11 @@ def Operaciones(dic):
 			continue
 		if opc == 7: #Salir
 			break
+		if opc == 2:
+			print("Matriz de cierre transitivo: \n")
+			CT = FloydWarshall(dic)
+			for x in CT:
+				print(x)
 		if opc == 5:
 			print("Matriz de adyacencia: \n")
 			for x in matrizAdyacencia(dic): #Le paso el grafo entero
@@ -250,7 +256,7 @@ def Complejidades():
 			continue
 		if opc == 6: #Salir
 			break
-		complejidades(opc)	
+		complejidades(opc)
 		wait()
 
 def Eliminacion():
@@ -283,7 +289,7 @@ def Eliminacion():
 				print()
 			wait()
 			break
-		if opc == 2:			
+		if opc == 2:
 			wait()
 			break
 
@@ -338,5 +344,5 @@ def main():
 	print("╠══════════════════════════════╦═══════════╩")
 	print("║ Docente: Lic. Virginia More  ║")
 	print("╚══════════════════════════════╝")
-	
+
 main()
