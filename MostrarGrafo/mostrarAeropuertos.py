@@ -1,13 +1,13 @@
 #############################################################################################
-#							   Datos de mostrarAeropuertos.py								#
-#																							#
+#                              Datos de mostrarAeropuertos.py                               #
+#                                                                                           #
 #############################################################################################
-# - Autor: Emiliano Calvacho																#
+# - Autor: Emiliano Calvacho                                                                #
 #############################################################################################
-# - Funcionalidad: muestra la lista de adyacencia de cada aeropuerto pero con los nombres, 	#
-# viendo cuales son los destinos disponibles.												#
+# - Funcionalidad: muestra la lista de adyacencia de cada aeropuerto pero con los nombres,  #
+# viendo cuales son los destinos disponibles.                                               #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 import sys
