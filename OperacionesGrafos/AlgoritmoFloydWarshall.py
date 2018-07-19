@@ -44,8 +44,8 @@ def FloydWarshall(grafo):
     return dist
 
 # Testing
-grafo = Graph()
-grafo.crearGrafoCero()
-FW = FloydWarshall(grafo)
-for x in FW:
-    print(x)
+# grafo = Graph()
+# grafo.crearGrafoCero()
+# FW = FloydWarshall(grafo)
+# for x in FW:
+# 	print(x)
