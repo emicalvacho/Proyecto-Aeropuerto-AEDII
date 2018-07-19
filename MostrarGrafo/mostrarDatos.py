@@ -1,12 +1,12 @@
 #############################################################################################
-#							   Datos de mostrarDatos.py										#
-#																							#
+#                                Datos de mostrarDatos.py                                   #
+#                                                                                           #
 #############################################################################################
-# - Autor: Emiliano Calvacho																#
+# - Autor: Emiliano Calvacho                                                                #
 #############################################################################################
-# - Funcionalidad: muestra todos los datos de los aeropuertos en formato de cuadro			#
+# - Funcionalidad: muestra todos los datos de los aeropuertos en formato de cuadro          #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 import csv 
