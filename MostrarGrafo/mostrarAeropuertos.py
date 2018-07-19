@@ -1,5 +1,15 @@
-"""mosrarAeropuertos muestra la lista de adyacencia de cada aeropuerto pero con los 
-nombres, viendo cuales son los destinos disponibles."""
+#############################################################################################
+#							   Datos de mostrarAeropuertos.py								#
+#																							#
+#############################################################################################
+# - Autor: Emiliano Calvacho																#
+#############################################################################################
+# - Funcionalidad: muestra la lista de adyacencia de cada aeropuerto pero con los nombres, 	#
+# viendo cuales son los destinos disponibles.												#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
+
 import sys
 import os
 import csv
@@ -9,7 +19,11 @@ sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
 
 def listaAero():
-	# Creamos una lista de tuplas con (id,nombreAeropuerto)
+	"""
+		Funcionamiento: crea una lista de tuplas con (id,nombreAeropuerto)
+		Precondicion: no recibe nada
+		Postcondicion: devuelve lista de tuplas con la informacion necesaria
+	"""
 	# Leyendo el archivo de aeropuertos
 	ruta_archivo = buscarArchivo("AeropuertosArg.csv")
 	with open(ruta_archivo) as archivo_aero:

@@ -1,7 +1,14 @@
-"""geo_distance Es el script que me permite calcular las distancias entre dos aeropuertos,
-utilizando la libreria math de Python para realizar determinadas operaciones matermaticas 
-y la libreria csv para abrir la lista de aeropuertos.
-Ademas utiliza el script de buscador de archivos para acortar rutas conjunto a la libreria sys"""
+#############################################################################################
+#							     Datos de distanciaRutas.py									#
+#																							#
+#############################################################################################
+# - Autores: Gonzalo Grisafi, Agustin Clemente												#
+#############################################################################################
+# - Funcionalidad: permite calcular las distancias entre dos aeropuertos, realizando 		#
+# determinadas operaciones matermaticas.													#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
 
 from math import cos,radians,sin,pow,asin,sqrt
 import csv
@@ -47,6 +54,6 @@ def distancia(id1, id2):
 	dist = 2 * radio * asin(sqrt(a))
 	return dist
 
-# # Testing
+# Testing
 # print(distancia(8,20))
 # Debe imprimir 821.0526371448975

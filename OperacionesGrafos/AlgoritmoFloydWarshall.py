@@ -1,18 +1,26 @@
+#############################################################################################
+#                           Datos de AlgoritmoFloydWarshall.py                              #
+#                                                                                           #
+#############################################################################################
+# - Autor: Agustin Clemente                                                                 #
+#############################################################################################
+# - Funcionalidad: crea la matriz de cierre transitivo del grafo dado. Utiliza la función   #
+# distancia para crear la matriz de distancias.                                             #
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
+#############################################################################################
+
 import sys
 import math
 sys.path.append("..")
 from Grafo.crearDicGrafo import Graph
 from Grafo.distanciaRutas import distancia
 
-"""
-    Floyd-Warshall crea la matriz de cierre transitivo del grafo dado.
-    Utiliza la función distancia para crear la matriz de distancias.
-"""
-
 def FloydWarshall(grafo):
 
     """
-		Precondiciones: un grafo de la clase Graph
+        Funcionalidad: crea la matriz de las distancias minimas del grafo con Floyd-Warshall
+		Precondiciones: recibe un grafo de la clase Graph
 		Postcondiciones: devuelve la matriz de cierre transitivo del grafo
 	"""
 

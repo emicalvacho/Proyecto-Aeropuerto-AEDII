@@ -1,3 +1,14 @@
+##############################################################################################
+#                                   Datos de CrearMapa.py                                    #
+#                                                                                            #
+##############################################################################################
+# - Autor: Gonzalo Grisafi                                                                   #
+##############################################################################################
+# - Funcionalidad: crea mapas de aeropuertos y crea mapa de las rutas entre esos aeropuertos # 
+##############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                  #
+##############################################################################################
+
 import folium
 import pandas as pd
 import branca
@@ -5,14 +16,16 @@ import sys
 import random
 import os
 from pathlib import Path
+sys._enablelegacywindowsfsencoding()
 sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
 
-"""def colorRandom():
-    # return "#000000"
-    return "#"+str(hex(random.randint(16711680,8684676)))"""
-
 def colorRandom():
+    """
+        Funcionamiento: busca un color aleatorio en hexadecimal
+        Precondicion: no recibe nada
+        Postcondicion: devuelve  una coordenada del color en hexadecimal
+    """
     a = hex(random.randrange(0,256))
     b = hex(random.randrange(0,256))
     c = hex(random.randrange(0,256))
@@ -29,6 +42,11 @@ def colorRandom():
     return "#" + z.upper()
 
 def CrearMapaRutas():
+    """
+        Funcionamiento: crea el mapa de las rutas con los aeropuertos
+        Precondicion: no recibe nada
+        Postcondicion: no devuelve nada
+    """
     ruta=buscarArchivo("AeropuertosArg.csv")
     ruta2=buscarArchivo("RutasAeropuertos.csv")
     map_osm=folium.Map(location=[-40.1872152,-64.6290514],zoom_start=4)
@@ -112,6 +130,11 @@ def CrearMapaRutas():
     map_osm.save(directorio)
 
 def CrearMapaAeropuertos():
+    """
+        Funcionamiento: crea el mapa de los aeropuertos solamente
+        Precondicion: no recibe nada
+        Postcondicion: no devuelve nada
+    """
     ruta=buscarArchivo("AeropuertosArg.csv")
     ruta2=buscarArchivo("RutasAeropuertos.csv")
     map_osm=folium.Map(location=[-40.1872152,-64.6290514],zoom_start=4)

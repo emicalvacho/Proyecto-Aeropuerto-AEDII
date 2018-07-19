@@ -1,4 +1,20 @@
+#############################################################################################
+#							     Datos de complejidades.py									#
+#																							#
+#############################################################################################
+# - Autor: Emiliano Calvacho																#
+#############################################################################################
+# - Funcionalidad: muestra las complejidades de los algoritmos utilizados					#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
+
 def complejidades(opc):
+	"""
+		Funcionamiento: muestra complejidades
+		Precondicion: recibe una opcion
+		Postcondicion: no devuelve nada
+	"""
 	print("La complejidad del ",end="") 
 	if opc == 1:
 		print("Recorrido BFS es O(V+E)")
@@ -11,4 +27,5 @@ def complejidades(opc):
 	if opc == 5:
 		print("Algoritmo DETECTAR CICLOS es O(V)")
 
+# Testing
 # complejidadesAlg(1)

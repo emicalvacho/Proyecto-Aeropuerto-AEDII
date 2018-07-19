@@ -1,5 +1,13 @@
-"""buscarArchivo es un script que se ocupa de alamacenar la ruta del archivo a tratar
-Utiliza la libreria os y pathlib para poder manejarse con los archivos y rutas."""
+#############################################################################################
+#							     Datos de buscarArchivo.py									#
+#																							#
+#############################################################################################
+# - Autor: Gonzalo Grisafi																	#
+#############################################################################################
+# - Funcionalidad: se ocupa de almacenar la ruta del archivo a tratar						#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
 
 import os
 from pathlib import Path

@@ -1,9 +1,25 @@
+#############################################################################################
+#							   Datos de mostrarDatos.py										#
+#																							#
+#############################################################################################
+# - Autor: Emiliano Calvacho																#
+#############################################################################################
+# - Funcionalidad: muestra todos los datos de los aeropuertos en formato de cuadro			#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
+
 import csv 
 import sys
 sys.path.append("..")
 from BuscadorPath.buscarArchivo import buscarArchivo
 
 def mostrarDatos():
+	"""
+		Funcionamiento: muestra datos de aeropuertos
+		Precondicion: no recibe nada
+		Postcondicion: no devuelve nada
+	"""
 	ruta_archivo = buscarArchivo("AeropuertosArg.csv")
 	with open(ruta_archivo) as archivoAeropuertos:
 		leer_archivo = csv.reader(archivoAeropuertos)

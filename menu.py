@@ -1,10 +1,18 @@
+#############################################################################################
+#									Datos de menu.py										#
+#																							#
+#############################################################################################
+# - Autores: Agustin Clemente, Emiliano Calvacho											#
+#############################################################################################
+# - Funcionalidad: muestra todas las opciones disponibles para el programa de aeorpuertos,	#
+# basado en los algoritmos y funciones vistas en la materia de Algoritmo y Estructura de 	#
+# de Datos II, refiriendose al tema de GRAFOS 												#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
 import os
 import sys
 import pprint
-import msvcrt as m
-def wait():
-	# m.getch()
-	os.system("pause")
 from Grafo.crearDicGrafo import Graph
 from Grafo.distanciaRutas import distancia
 from Grafo.rutasAleatorias import ruteoAleatorio
@@ -16,6 +24,9 @@ from OperacionesGrafos.RecorridoDFS import DFS
 from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 from Eficiencias.complejidades import complejidades
 from Visualización.Mapas import MapaAeropuertos,MapaRutas
+
+def wait():
+	os.system("pause")
 
 def MP():
 	os.system('cls')
@@ -195,7 +206,7 @@ def Visualizar():
 		print("║      VISUALIZACIÓN EN MAPA      ║")
 		print("╠═════════════════════════════════╣")
 		print("║   1. VISUALIZAR AEROPUERTOS     ║")
-		print("║   2. VISUAIZAR RUTAS            ║")
+		print("║   2. VISUALIZAR RUTAS           ║")
 		print("║   3. ATRÁS                      ║")
 		print("╚═════════════════════════════════╝")
 		try:
@@ -274,5 +285,4 @@ def main():
 			Complejidades()
 	os.system('cls')
 
-if __name__ == '__main__':
-	main()
+main()

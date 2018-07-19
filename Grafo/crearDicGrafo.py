@@ -1,7 +1,14 @@
-"""crearDicGrafo es una clase que se ocupa de crear un grafo como diccionario desde los 
-archivos CSV, además tiene la posibilidad de ver sus vertices y aristas.
-Utiliza la libreria csv para trabajar con dichos archivos y pprint para debuggin.
-Ademas utiliza el script de buscador de archivos para acortar rutas conjunto a la libreria sys"""
+#############################################################################################
+#							     Datos de crearDicGrafo.py									#
+#																							#
+#############################################################################################
+# - Autor: Emiliano Calvacho																#
+#############################################################################################
+# - Funcionalidad: se ocupa de crear un grafo como diccionario desde los  archivos CSV,		#
+# además tiene la posibilidad de ver sus vertices y aristas.								#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
 
 import csv
 import pprint
@@ -101,6 +108,5 @@ class Graph (object):
 # Testing 
 # grafo = Graph()
 # grafo.crearGrafoCero()
-# # No se asusten que pprint lo imprime desordenado pero print normal no
 # pprint.pprint(grafo.getGrafo())
 # print(buscarArchivo("AeropuertosArg.csv"))

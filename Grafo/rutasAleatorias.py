@@ -1,8 +1,14 @@
-"""rutasAleatorias crea un archivo con las rutas disponibles según la temporada que el usuario ingrese y las
-respectivas distancias entre dichas rutas.
-Se utiliza la librería csv para operar con este tipo de archivos, random para crear una aleatoridad de rutas
-y el script de distanciasRutas para calcular la distancia entre las rutas.
-Ademas utiliza el script de buscador de archivos para acortar rutas conjunto a la libreria sys."""
+#############################################################################################
+#							   Datos de rutasAleatorias.py									#
+#																							#
+#############################################################################################
+# - Autor: Emiliano Calvacho																#
+#############################################################################################
+# - Funcionalidad: crea un archivo con las rutas disponibles según la temporada que el 		#
+# usuario ingrese y las respectivas distancias entre dichas rutas.							#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
 
 import csv
 import random
@@ -74,16 +80,9 @@ def ruteoAleatorio(opc):
 				cont += 1
 
 	# Creo el archivo de las rutas de los aeropuertos
-	#ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
+	# ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
 
 	df=pd.DataFrame(lista_rutas)
 	dir=os.getcwd()
 	dir+="\\Datos\\RutasAeropuertos.csv"
 	df.to_csv(dir,index=False,header=False)
-
-	"""directorio=os.getcwd()
-	directorio+="\\Visualización"
-	with open(directorio,'w',newline = '') as archivo_rutas:
-		escribir = csv.writer(archivo_rutas)
-		escribir.writerows(lista_rutas)
-"""

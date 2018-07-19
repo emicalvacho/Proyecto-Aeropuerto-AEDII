@@ -1,3 +1,13 @@
+#############################################################################################
+#							   Datos de mostrarDistancias.py								#
+#																							#
+#############################################################################################
+# - Autor: Emiliano Calvacho																#
+#############################################################################################
+# - Funcionalidad: muestra la distancia que hay de un aeropuerto a otro segun las rutas		#
+#############################################################################################
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+#############################################################################################
 
 import csv
 import sys
@@ -6,6 +16,11 @@ from BuscadorPath.buscarArchivo import buscarArchivo
 from MostrarGrafo.mostrarAeropuertos import listaAero
 
 def mostrarDistancias():
+	"""
+		Funcionamiento: muestra distancia segun las rutas
+		Precondicion: no recibe nada
+		Postcondicion: no devuelve nada
+	"""
 	ruta_archivo = buscarArchivo("RutasAeropuertos.csv")
 	with open(ruta_archivo) as archivo_rutas:
 		leer_arc = csv.reader(archivo_rutas)
