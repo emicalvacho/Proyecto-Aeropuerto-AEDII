@@ -1,13 +1,13 @@
 #############################################################################################
-#							     Datos de distanciaRutas.py									#
-#																							#
+#                                  Datos de distanciaRutas.py                               #
+#                                                                                           #
 #############################################################################################
-# - Autores: Gonzalo Grisafi, Agustin Clemente												#
+# - Autores: Gonzalo Grisafi, Agustin Clemente                                              #
 #############################################################################################
-# - Funcionalidad: permite calcular las distancias entre dos aeropuertos, realizando 		#
-# determinadas operaciones matermaticas.													#
+# - Funcionalidad: permite calcular las distancias entre dos aeropuertos, realizando        #
+# determinadas operaciones matermaticas.                                                    #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 from math import cos,radians,sin,pow,asin,sqrt
