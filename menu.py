@@ -247,7 +247,7 @@ def Complejidades():
 		print("║   2. DFS                        ║")
 		print("║   3. DIJKSTRA                   ║")
 		print("║   4. FLOYD-WARSHALL             ║")
-		print("║   5. DETECTAR CICLOS            ║")
+		print("║   5. TOPOSORT                   ║")
 		print("║   6. ATRÁS                      ║")
 		print("╚═════════════════════════════════╝")
 		try:
