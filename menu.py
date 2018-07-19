@@ -170,21 +170,22 @@ def Operaciones(dic):
 		print("║   1. ALGORITMO DE DIJKSTRA      ║")
 		print("║   2. ALG. DE FLOYD-WARSHALL     ║")
 		print("║   3. TOPOSORT                   ║")
-		print("║   4. VER VÉRTICES AISLADOS      ║")
-		print("║   5. VER MATRIZ DE ADYACENCIA   ║")
-		print("║   6. VER LISTA DE ADYACENCIA    ║")
-		print("║   7. ATRÁS                      ║")
+		print("║   4. DETECTAR CICLOS            ║")
+		print("║   5. VER VÉRTICES AISLADOS      ║")
+		print("║   6. VER MATRIZ DE ADYACENCIA   ║")
+		print("║   7. VER LISTA DE ADYACENCIA    ║")
+		print("║   8. ATRÁS                      ║")
 		print("╚═════════════════════════════════╝")
 		try:
 			opc = int(input("Su opción: "))
 		except:
 			print("Opcion no válida.")
 			wait()
-		if opc>7 or opc<1: #Límites
+		if opc>8 or opc<1: #Límites
 			print("Opcion no válida.")
 			wait()
 			continue
-		if opc == 7: #Salir
+		if opc == 8: #Salir
 			break
 		if opc == 1:
 			try:
@@ -207,15 +208,19 @@ def Operaciones(dic):
 			print("Ordenamiento topologico: \n")
 			mostrarTopoSort()
 		if opc == 4:
+			from OperacionesGrafos.DetectarCiclos import mostrarDectectorCiclos
+			print("Detectar ciclos con ejemplos: \n")
+			mostrarDectectorCiclos()
+		if opc == 5:
 			from OperacionesGrafos.VerticesAislados import VerticesAislados
 			print("Vertices aislados: ",end="")
 			print(VerticesAislados(dic.getGrafo()))
-		if opc == 5:
+		if opc == 6:
 			from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 			print("Matriz de adyacencia: \n")
 			for x in matrizAdyacencia(dic): #Le paso el grafo entero
 				print(x)
-		if opc == 6:
+		if opc == 7:
 			from MostrarGrafo.mostrarDistancias import mostrarDistancias
 			print("Lista de adyacencia: \n")
 			pprint.pprint(dic.getGrafo())
@@ -260,18 +265,19 @@ def Complejidades():
 		print("║   3. DIJKSTRA                   ║")
 		print("║   4. FLOYD-WARSHALL             ║")
 		print("║   5. TOPOSORT                   ║")
-		print("║   6. ATRÁS                      ║")
+		print("║   6. DETECTAR CICLOS            ║")
+		print("║   7. ATRÁS                      ║")
 		print("╚═════════════════════════════════╝")
 		try:
 			opc = int(input("Su opción: "))
 		except:
 			print("Opcion no válida.")
 			wait()
-		if opc>6 or opc<1: #Límites
+		if opc>7 or opc<1: #Límites
 			print("Opcion no válida.")
 			wait()
 			continue
-		if opc == 6: #Salir
+		if opc == 7: #Salir
 			break
 		from Eficiencias.complejidades import complejidades
 		complejidades(opc)	
