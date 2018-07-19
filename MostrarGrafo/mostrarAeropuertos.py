@@ -48,24 +48,24 @@ def mostrarAeropuertos(grafo):
 		
 		# Imprimo el vertice correspondiente del grafo
 		print()
-		print("╔════════════════════════════════════════════════════════════════════════╗")	
-		print("║ #", lista_aeropuertos[i][1].ljust(65),"   ║") 
-		print("╠════════════════════════════════════════════════════════════════════════╣")
+		print("╔═══════════════════════════════════════════════════════════════════════════╗")	
+		print("║",str(lista_aeropuertos[i][0]).ljust(3),"#", lista_aeropuertos[i][1].ljust(65),"  ║") 
+		print("╠═══════════════════════════════════════════════════════════════════════════╣")
 		
 		vertice = lista_aeropuertos[i][0] # Identifico la ID de la lista
 		lista_ady = grafo[vertice] # Creo la lista de adyacencia de ese ID
 		if lista_ady: # Si la lista_ady no esta vacia imprimo los destinos
-			print("║ Tiene disponible los siguientes destinos: ".ljust(72),"║")
+			print("║ Tiene disponible los siguientes destinos: ".ljust(72),"   ║")
 
 			for item in lista_ady:
 				for j in range(len(lista_aeropuertos)): # Vuelvo a iterar lista de aeropuertos
 					if item == lista_aeropuertos[j][0]: # Identifico el aeropuerto
-						print("║  -",lista_aeropuertos[j][1].ljust(65),"  ║") # Imprimo su nombre
+						print("║  -",lista_aeropuertos[j][1].ljust(65),"     ║") # Imprimo su nombre
 						break
 		else: # Si la lista_ady esta vacia envio un mensaje
-			print("║ No hay destinos diponibles".ljust(72),"║")
+			print("║ No hay destinos diponibles".ljust(72),"   ║")
 
-		print("╚════════════════════════════════════════════════════════════════════════╝")	
+		print("╚═══════════════════════════════════════════════════════════════════════════╝")	
 
 # Testing	
 # grafo_obj = Graph()
