@@ -1,12 +1,12 @@
 #############################################################################################
-#							   Datos de RecorridoBFS.py										#
-#																							#
+#                                Datos de RecorridoBFS.py                                   #
+#                                                                                           #
 #############################################################################################
-# - Autor: Jose Guareschi																	#
+# - Autor: Jose Guareschi                                                                   #
 #############################################################################################
-# - Funcionalidad: realiza el recorrido en anchura del grafo de aeropuertos					#
+# - Funcionalidad: realiza el recorrido en anchura del grafo de aeropuertos                 #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 import os
