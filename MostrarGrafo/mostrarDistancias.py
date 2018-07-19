@@ -1,12 +1,12 @@
 #############################################################################################
-#							   Datos de mostrarDistancias.py								#
-#																							#
+#                            Datos de mostrarDistancias.py                                  #
+#                                                                                           #
 #############################################################################################
-# - Autor: Emiliano Calvacho																#
+# - Autor: Emiliano Calvacho                                                                #
 #############################################################################################
-# - Funcionalidad: muestra la distancia que hay de un aeropuerto a otro segun las rutas		#
+# - Funcionalidad: muestra la distancia que hay de un aeropuerto a otro segun las rutas.    #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 import csv
