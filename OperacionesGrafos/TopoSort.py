@@ -48,11 +48,11 @@ def dfs_visit(graph, u, color, L, found_cycle):
 
 def mostrarTopoSort():
     graph_tasks = { "Aeroparque Jorge Newbery" : ["Aeropuerto Internacional Ministro Pistarini"],
-                "Aeropuerto Internacional de Puerto Iguazu" : ["Aeropuerto Internacional Ministro Pistarini"],
-                "Aeropuerto Internacional Ministro Pistarini" : [],
-                "Aeropuerto Tartagal" : ["Aeropuerto Internacional Ingeniero Ambrosio Taravella"],
-                "Aeropuerto Internacional Ingeniero Ambrosio Taravella" : ["Aeropuerto Almirante Marcos A. Zar"],
-                "Aeropuerto Almirante Marcos A. Zar" : [] }
+                      "Aeropuerto Internacional de Puerto Iguazu" : ["Aeropuerto Internacional Ministro Pistarini"],
+                      "Aeropuerto Internacional Ministro Pistarini" : ["Aeropuerto Internacional Ingeniero Ambrosio Taravella"],
+                      "Aeropuerto Tartagal" : ["Aeropuerto Internacional Ingeniero Ambrosio Taravella","Aeropuerto Almirante Marcos A. Zar"],
+                      "Aeropuerto Internacional Ingeniero Ambrosio Taravella" : ["Aeropuerto Almirante Marcos A. Zar"],
+                      "Aeropuerto Almirante Marcos A. Zar" : [] }
 
     print("Lista de algunos aeropuertos para aplicarle toposort")
     for key in graph_tasks:
