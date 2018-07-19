@@ -26,6 +26,8 @@ def complejidades(opc):
 		print("Algoritmo FLOYD-WARSHALL es O(V^3)")
 	if opc == 5:
 		print("Algoritmo TOPOSORT es O(V^2) si usa matriz de adyacencia o O(E+V) si usa lista de adyacencia")
+	if opc == 6:
+		print("Algoritmo DETECTAR CICLOS es O(E*V)")
 	print()
 	print("Referencias: \nV->Cantidad de vertices\nE->Cantidad de aristas")
 
