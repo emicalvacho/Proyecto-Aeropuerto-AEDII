@@ -1,13 +1,13 @@
 #############################################################################################
-#							   Datos de rutasAleatorias.py									#
-#																							#
+#                              Datos de rutasAleatorias.py                                  #
+#                                                                                           #
 #############################################################################################
-# - Autor: Emiliano Calvacho																#
+# - Autor: Emiliano Calvacho                                                                #
 #############################################################################################
-# - Funcionalidad: crea un archivo con las rutas disponibles según la temporada que el 		#
-# usuario ingrese y las respectivas distancias entre dichas rutas.							#
+# - Funcionalidad: crea un archivo con las rutas disponibles según la temporada que el      #
+# usuario ingrese y las respectivas distancias entre dichas rutas.                          #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 import csv
