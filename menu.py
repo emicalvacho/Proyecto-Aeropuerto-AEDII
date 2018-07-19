@@ -22,6 +22,7 @@ from MostrarGrafo.mostrarAeropuertos import mostrarAeropuertos
 from MostrarGrafo.mostrarDistancias import mostrarDistancias
 from OperacionesGrafos.RecorridoBFS import BFS
 from OperacionesGrafos.RecorridoDFS import DFS
+from OperacionesGrafos.AlgoritmoFloydWarshall import FloydWarshall
 from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 from OperacionesGrafos.TopoSort import mostrarTopoSort
 from Eficiencias.complejidades import complejidades
@@ -192,6 +193,11 @@ def Operaciones(dic):
 			continue
 		if opc == 7: #Salir
 			break
+		if opc == 2:
+			print("Matriz de cierre transitivo: \n")
+			CT = FloydWarshall(dic)
+			for x in CT:
+				print(x)
 		if opc == 3:
 			print("Ordenamiento topologico: \n")
 			mostrarTopoSort()
