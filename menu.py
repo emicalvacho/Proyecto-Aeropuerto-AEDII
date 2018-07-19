@@ -158,6 +158,7 @@ def InfoAeropuertos(grafo):
 			from MostrarGrafo.mostrarAeropuertos import mostrarAeropuertos
 			mostrarAeropuertos(grafo)
 		if opc == 3:  
+			from MostrarGrafo.mostrarDistancias import mostrarDistancias
 			mostrarDistancias()
 		wait()		
 
