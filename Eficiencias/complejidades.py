@@ -1,12 +1,12 @@
 #############################################################################################
-#							     Datos de complejidades.py									#
-#																							#
+#                                 Datos de complejidades.py                                 #
+#                                                                                           #
 #############################################################################################
-# - Autor: Emiliano Calvacho																#
+# - Autor: Emiliano Calvacho                                                                #
 #############################################################################################
-# - Funcionalidad: muestra las complejidades de los algoritmos utilizados					#
+# - Funcionalidad: muestra las complejidades de los algoritmos utilizados                   #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 def complejidades(opc):
