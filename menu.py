@@ -15,18 +15,7 @@ import os
 import sys
 import pprint
 from Grafo.crearDicGrafo import Graph
-from Grafo.distanciaRutas import distancia
-from Grafo.rutasAleatorias import ruteoAleatorio
-from MostrarGrafo.mostrarDatos import mostrarDatos
-from MostrarGrafo.mostrarAeropuertos import mostrarAeropuertos
-from MostrarGrafo.mostrarDistancias import mostrarDistancias
-from OperacionesGrafos.RecorridoBFS import BFS
-from OperacionesGrafos.RecorridoDFS import DFS
-from OperacionesGrafos.AlgoritmoFloydWarshall import FloydWarshall
-from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
-from OperacionesGrafos.TopoSort import mostrarTopoSort
-from Eficiencias.complejidades import complejidades
-from Visualización.Mapas import MapaAeropuertos,MapaRutas
+from Grafo.rutasAleatorias import ruteoAleatorio	
 
 def wait():
 	os.system("pause")
@@ -73,6 +62,7 @@ def Recorridos(grafo):
 		if opc == 3: #Salir
 			break
 		if opc == 1:
+			from OperacionesGrafos.RecorridoDFS import DFS
 			opc2=0
 			while opc2<1 or opc2>25:
 				try:
@@ -88,6 +78,7 @@ def Recorridos(grafo):
 				DFS(opc2, grafo)
 				wait()
 		if opc == 2:
+			from OperacionesGrafos.RecorridoBFS import BFS
 			opc2=0
 			while opc2<1 or opc2>25:
 				try:
@@ -161,8 +152,10 @@ def InfoAeropuertos(grafo):
 		if opc == 4: #Salir
 			break
 		if opc == 1:
+			from MostrarGrafo.mostrarDatos import mostrarDatos
 			mostrarDatos()
 		if opc == 2:
+			from MostrarGrafo.mostrarAeropuertos import mostrarAeropuertos
 			mostrarAeropuertos(grafo)
 		if opc == 3:  
 			mostrarDistancias()
@@ -193,19 +186,37 @@ def Operaciones(dic):
 			continue
 		if opc == 7: #Salir
 			break
+		if opc == 1:
+			try:
+				print("Algoritmo de Dijkstra: \n")
+				origen = 12
+				from OperacionesGrafos.AlgoritmoDijkstra import Dijkstra
+				Dijkstra(dic,origen)
+			except Exception as error:
+				print("Se encontro el siguiente error: ")
+				print(error)
+				print()
 		if opc == 2:
+			from OperacionesGrafos.AlgoritmoFloydWarshall import FloydWarshall
 			print("Matriz de cierre transitivo: \n")
 			CT = FloydWarshall(dic)
 			for x in CT:
 				print(x)
 		if opc == 3:
+			from OperacionesGrafos.TopoSort import mostrarTopoSort
 			print("Ordenamiento topologico: \n")
 			mostrarTopoSort()
+		if opc == 4:
+			from OperacionesGrafos.VerticesAislados import VerticesAislados
+			print("Vertices aislados: ",end="")
+			print(VerticesAislados(dic.getGrafo()))
 		if opc == 5:
+			from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
 			print("Matriz de adyacencia: \n")
 			for x in matrizAdyacencia(dic): #Le paso el grafo entero
 				print(x)
 		if opc == 6:
+			from MostrarGrafo.mostrarDistancias import mostrarDistancias
 			print("Lista de adyacencia: \n")
 			pprint.pprint(dic.getGrafo())
 		wait()
@@ -231,6 +242,7 @@ def Visualizar():
 			continue
 		if opc == 3: #Salir
 			break
+		from Visualización.Mapas import MapaAeropuertos,MapaRutas
 		if opc == 1:
 			MapaAeropuertos()
 		if opc == 2:
@@ -261,6 +273,7 @@ def Complejidades():
 			continue
 		if opc == 6: #Salir
 			break
+		from Eficiencias.complejidades import complejidades
 		complejidades(opc)	
 		wait()
 
