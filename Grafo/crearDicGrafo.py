@@ -1,13 +1,13 @@
 #############################################################################################
-#							     Datos de crearDicGrafo.py									#
-#																							#
+#                              Datos de crearDicGrafo.py                                    #
+#                                                                                           #
 #############################################################################################
-# - Autor: Emiliano Calvacho																#
+# - Autor: Emiliano Calvacho                                                                #
 #############################################################################################
-# - Funcionalidad: se ocupa de crear un grafo como diccionario desde los  archivos CSV,		#
-# además tiene la posibilidad de ver sus vertices y aristas.								#
+# - Funcionalidad: se ocupa de crear un grafo como diccionario desde los  archivos CSV,     #
+# además tiene la posibilidad de ver sus vertices y aristas.                                #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 import csv
