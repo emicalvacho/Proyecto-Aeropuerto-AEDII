@@ -1,14 +1,14 @@
 #############################################################################################
-#									Datos de menu.py										#
-#																							#
+#                                    Datos de menu.py                                       #
+#                                                                                           #
 #############################################################################################
-# - Autores: Agustin Clemente, Emiliano Calvacho											#
+# - Autores: Agustin Clemente, Emiliano Calvacho                                            #
 #############################################################################################
-# - Funcionalidad: muestra todas las opciones disponibles para el programa de aeorpuertos,	#
-# basado en los algoritmos y funciones vistas en la materia de Algoritmo y Estructura de 	#
-# de Datos II, refiriendose al tema de GRAFOS 												#
+# - Funcionalidad: muestra todas las opciones disponibles para el programa de aeorpuertos,  #
+# basado en los algoritmos y funciones vistas en la materia de Algoritmo y Estructura de    #
+# de Datos II, refiriendose al tema de GRAFOS                                               #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 import os
