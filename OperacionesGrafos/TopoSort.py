@@ -2,7 +2,7 @@
 #                                   Datos de TopoSort.py                                    #
 #                                                                                           #
 #############################################################################################
-# - Autores: Jose Guareschi, Jose Rodriguez                                                 #
+# - Autores: Jose Guareschi                                                                 #
 #############################################################################################
 # - Funcionalidad: realiza el ordenamiento topologico de un grafo forzado, osea inventado,  #
 # para poder ver bien la funcionalidad del algoritmo en el mismo. Esto se debe porque el    # 
