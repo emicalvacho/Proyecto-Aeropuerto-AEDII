@@ -253,6 +253,40 @@ def Complejidades():
 		complejidades(opc)	
 		wait()
 
+def Eliminacion():
+	while(True):
+		os.system('cls')
+		print("╔═════════════════════════════════╗")
+		print("║         ELIMINAR DATOS          ║")
+		print("╠═════════════════════════════════╣")
+		print("║   1. QUIERO ELIMINAR DATOS      ║")
+		print("║   2. QUIERO MANTENER DATOS      ║")
+		print("╚═════════════════════════════════╝")
+		try:
+			opc = int(input("Su opción: "))
+		except:
+			print("Opcion no válida.")
+			wait()
+		if opc>2 or opc<1: #Límites
+			print("Opcion no válida.")
+			wait()
+			continue
+		if opc == 1:
+			# Elimino automaticamente los archivos creados
+			try:
+				os.remove("Datos\\RutasAeropuertos.csv")
+				os.remove("Visualización\\MapaAeropuertos.html")
+				os.remove("Visualización\\MapaRutas.html")
+			except Exception as error:
+				print("Se encontro el siguiente error: ")
+				print(error)
+				print()
+			wait()
+			break
+		if opc == 2:			
+			wait()
+			break
+
 # MAIN
 def main():
 	#Operaciones iniciales obligatorias
@@ -283,6 +317,26 @@ def main():
 			Visualizar()
 		if opc == 6:
 			Complejidades()
+		if opc == 7:
+			Eliminacion()
 	os.system('cls')
 
+	print("╔══════════════════════════════════════╗")
+	print("║ Gracias por usar nuestro programa :) ║")
+	print("╠══════════════════════════╦═══════════╝")
+	print("║ Proyecto realizado por:  ║")
+	print("║ - Gonzalo Grisafi        ║")
+	print("║ - Agustin Clemente       ║")
+	print("║ - Emiliano Calvacho      ║")
+	print("║ - Jose Guareschi         ║")
+	print("║ - Jose Rodriguez         ║")
+	print("║ - Javier Figueroa        ║")
+	print("╠══════════════════════════╩══════════════════════════════════════════════╗")
+	print("║ Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES ║")
+	print("╠══════════════════════════════════════════╦══════════════════════════════╝")
+	print("║ Materia: Algoritmo y Estructura de Datos ║")
+	print("╠══════════════════════════════╦═══════════╩")
+	print("║ Docente: Lic. Virginia More  ║")
+	print("╚══════════════════════════════╝")
+	
 main()
