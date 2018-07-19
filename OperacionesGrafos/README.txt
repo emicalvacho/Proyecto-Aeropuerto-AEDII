@@ -1,0 +1,1 @@
+Son las funciones pedidas por la profe de las operaciones a los grafos.

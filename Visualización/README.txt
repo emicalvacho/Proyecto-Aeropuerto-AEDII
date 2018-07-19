@@ -1,0 +1,1 @@
+Espacio destinado para la parte de GUI y la parte Gráfica del proyecto.
