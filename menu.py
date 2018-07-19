@@ -10,6 +10,7 @@
 #############################################################################################
 # - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
 #############################################################################################
+
 import os
 import sys
 import pprint
@@ -21,8 +22,8 @@ from MostrarGrafo.mostrarAeropuertos import mostrarAeropuertos
 from MostrarGrafo.mostrarDistancias import mostrarDistancias
 from OperacionesGrafos.RecorridoBFS import BFS
 from OperacionesGrafos.RecorridoDFS import DFS
-from OperacionesGrafos.AlgoritmoFloydWarshall import FloydWarshall
 from OperacionesGrafos.MatrizAdyacencia import matrizAdyacencia
+from OperacionesGrafos.TopoSort import mostrarTopoSort
 from Eficiencias.complejidades import complejidades
 from Visualización.Mapas import MapaAeropuertos,MapaRutas
 
@@ -162,9 +163,9 @@ def InfoAeropuertos(grafo):
 			mostrarDatos()
 		if opc == 2:
 			mostrarAeropuertos(grafo)
-		if opc == 3:
+		if opc == 3:  
 			mostrarDistancias()
-		wait()
+		wait()		
 
 def Operaciones(dic):
 	while(True):
@@ -174,7 +175,7 @@ def Operaciones(dic):
 		print("╠═════════════════════════════════╣")
 		print("║   1. ALGORITMO DE DIJKSTRA      ║")
 		print("║   2. ALG. DE FLOYD-WARSHALL     ║")
-		print("║   3. DETECTAR CICLOS            ║")
+		print("║   3. TOPOSORT                   ║")
 		print("║   4. VER VÉRTICES AISLADOS      ║")
 		print("║   5. VER MATRIZ DE ADYACENCIA   ║")
 		print("║   6. VER LISTA DE ADYACENCIA    ║")
@@ -191,11 +192,9 @@ def Operaciones(dic):
 			continue
 		if opc == 7: #Salir
 			break
-		if opc == 2:
-			print("Matriz de cierre transitivo: \n")
-			CT = FloydWarshall(dic)
-			for x in CT:
-				print(x)
+		if opc == 3:
+			print("Ordenamiento topologico: \n")
+			mostrarTopoSort()
 		if opc == 5:
 			print("Matriz de adyacencia: \n")
 			for x in matrizAdyacencia(dic): #Le paso el grafo entero
@@ -256,7 +255,7 @@ def Complejidades():
 			continue
 		if opc == 6: #Salir
 			break
-		complejidades(opc)
+		complejidades(opc)	
 		wait()
 
 def Eliminacion():
@@ -289,7 +288,7 @@ def Eliminacion():
 				print()
 			wait()
 			break
-		if opc == 2:
+		if opc == 2:			
 			wait()
 			break
 
@@ -337,12 +336,12 @@ def main():
 	print("║ - Jose Guareschi         ║")
 	print("║ - Jose Rodriguez         ║")
 	print("║ - Javier Figueroa        ║")
-	print("╠══════════════════════════╩══════════════════════════════════════════════╗")
-	print("║ Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES ║")
-	print("╠══════════════════════════════════════════╦══════════════════════════════╝")
-	print("║ Materia: Algoritmo y Estructura de Datos ║")
-	print("╠══════════════════════════════╦═══════════╩")
+	print("╠══════════════════════════╩═══════════════════════════════════════════════╗")
+	print("║ Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES  ║")
+	print("╠════════════════════════════════════════════╦═════════════════════════════╝")
+	print("║ Materia: Algoritmos y Estructuras de Datos ║")
+	print("╠══════════════════════════════╦═════════════╝")
 	print("║ Docente: Lic. Virginia More  ║")
 	print("╚══════════════════════════════╝")
-
+	
 main()
