@@ -1,12 +1,12 @@
 #############################################################################################
-#							     Datos de buscarArchivo.py									#
-#																							#
+#                                Datos de buscarArchivo.py                                  #
+#                                                                                           #
 #############################################################################################
-# - Autor: Gonzalo Grisafi																	#
+# - Autor: Gonzalo Grisafi                                                                  #
 #############################################################################################
-# - Funcionalidad: se ocupa de almacenar la ruta del archivo a tratar						#
+# - Funcionalidad: se ocupa de almacenar la ruta del archivo a tratar                       #
 #############################################################################################
-# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES 				#
+# - Licencia: Copyright © 2018 - Alumnos de 3er año de Informatica del IDES                 #
 #############################################################################################
 
 import os
