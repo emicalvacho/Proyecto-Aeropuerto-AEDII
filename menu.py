@@ -222,9 +222,12 @@ def Operaciones(dic):
 			for x in matrizAdyacencia(dic): #Le paso el grafo entero
 				print(x)
 		if opc == 7:
-			from MostrarGrafo.mostrarDistancias import mostrarDistancias
+			from OperacionesGrafos.ListaAdyacencia import ListaAdyacencia
 			print("Lista de adyacencia: \n")
-			pprint.pprint(dic.getGrafo())
+			# pprint.pprint(grafo)
+			# print()
+			ListaAdyacencia(dic.getGrafo()) 
+			
 		wait()
 
 def Visualizar():
