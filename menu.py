@@ -31,7 +31,8 @@ def MP():
 	print("║   4. OPERACIONES DEL GRAFO      ║")
 	print("║   5. VISUALIZACIÓN EN MAPA      ║")
 	print("║   6. COMPLEJIDADES DE LOS ALG.  ║")
-	print("║   7. SALIR                      ║")
+	print("║   7. ELIMINAR                   ║")
+	print("║   8. SALIR                      ║")
 	print("╚═════════════════════════════════╝")
 	try:
 		return int(input("Su opción: "))
@@ -333,7 +334,7 @@ def main():
 	# Se obtiene el grafo y se lo guarda en un auxiliar
 	grafo = dic.getGrafo()
 	opc = 0
-	while opc!=7:
+	while opc!=8:
 		opc = MP()
 		if (opc>7 or opc<1) and opc!=-1: #Al retornar -1 indica que el user no ingresó int
 			print("Opcion no válida.")   # No entra porque ya lo regañó la función
